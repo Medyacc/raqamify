@@ -54,3 +54,27 @@ window.addEventListener("scroll", function () {
     goTopBtn.classList.remove("active");
   }
 });
+
+let nums = document.querySelectorAll(".stats .number");
+let statsSection = document.querySelector(".stats");
+let started = false;
+
+window.onscroll = function () {
+  // Trigger counting when section is fully in view
+  if (window.scrollY >= statsSection.offsetTop - window.innerHeight + 100) {
+    if (!started) {
+      nums.forEach((num) => startCount(num));
+    }
+    started = true;
+  }
+};
+
+function startCount(el) {
+  let goal = el.dataset.goal;
+  let count = setInterval(() => {
+    el.textContent++;
+    if (el.textContent == goal) {
+      clearInterval(count);
+    }
+  }, 10); // Faster counting
+}
