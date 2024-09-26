@@ -55,6 +55,7 @@ window.addEventListener("scroll", function () {
   }
 });
 
+
 let nums = document.querySelectorAll(".stats .number");
 let statsSection = document.querySelector(".stats");
 let started = false;
@@ -78,3 +79,69 @@ function startCount(el) {
     }
   }, 10); // Faster counting
 }
+
+
+let aboutSection = document.querySelector(".about");
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY >= aboutSection.offsetTop - window.innerHeight / 1.5) {
+    aboutSection.classList.add("show");
+  }
+});
+
+
+const serviceCards = document.querySelectorAll('.service-card');
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show'); // Add the 'show' class to trigger the animation
+      observer.unobserve(entry.target); // Stop observing once the animation has been triggered
+    }
+  });
+}, {
+  threshold: 0.2 // Trigger the animation when 20% of the card is visible
+});
+
+// Observe each service card
+serviceCards.forEach(card => {
+  observer.observe(card);
+});
+
+
+const featuresCards = document.querySelectorAll('.features-card');
+
+const featuresObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show'); // Add the 'show' class to trigger the animation
+      observer.unobserve(entry.target); // Stop observing once the animation has been triggered
+    }
+  });
+}, {
+  threshold: 0.2 // Trigger the animation when 20% of the card is visible
+});
+
+// Observe each feature card
+featuresCards.forEach(card => {
+  featuresObserver.observe(card);
+});
+
+
+const testimonialCards = document.querySelectorAll('.testimonials .box');
+
+const testimonialObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show'); // Add the 'show' class to trigger the animation
+      observer.unobserve(entry.target); // Stop observing once the animation has been triggered
+    }
+  });
+}, {
+  threshold: 0.2 // Trigger the animation when 20% of the card is visible
+});
+
+// Observe each feature card
+testimonialCards.forEach(card => {
+  testimonialObserver.observe(card);
+});
