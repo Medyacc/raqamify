@@ -13,14 +13,14 @@
   --winter-sky_50: #0c0c0c3d;
   --purple-navy: hsl(236, 26%, 43%);
   --ksu-purple: hsl(275, 54%, 33%);
-  --winter-sky: #e9c450;
+  --winter-sky: #fe8f23;
   --razzmatazz: hsl(335, 87%, 51%);
   --platinum: hsl(0, 0%, 90%);
   --black_70: hsla(0, 0%, 0%, 0.7);
   --rajah: hsl(29, 99%, 67%);
   --white: hsl(0, 0%, 100%);
 
-  --gradient-1: linear-gradient(90deg, #e9c450 0, #eed27f 51%, #f3e2b4);
+  --gradient-1: linear-gradient(to right, #fb912e, #f8962b, #f89c2f, #f4a433, #f9a42f, #f8a82f);
   --gradient-2: linear-gradient(90deg, #0c0c0c, #242424);
 
   /**
@@ -522,7 +522,7 @@ body {
   background-image: url("../images/service-banner-pattern.png");
   background-repeat: no-repeat;
   background-size: contain;
-  background-color: #f3e2b4;
+  background-color: #fe91233f;
   aspect-ratio: 1 / 1;
   max-width: 165px;
   display: grid;
